@@ -3,6 +3,12 @@
 // ==========================================
 import { db } from "./firebase-config.js";
 import {
+    getAuth,
+    signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+const auth = getAuth();
+import {
     collection,
     addDoc,
     getDocs,
@@ -99,7 +105,7 @@ function studentLogin() {
 // ADMIN LOGIN
 // ==========================================
 
-function adminLogin() {
+async function adminLogin() {
 
     const username =
         document.getElementById("adminUsername").value.trim();
@@ -110,23 +116,41 @@ function adminLogin() {
     const message =
         document.getElementById("loginMessage");
 
+    if (!username || !password) {
 
-    if (
-        username === "Aditya kaushik" &&
-        password === "789045"
-    ) {
+        message.innerText =
+            "Please enter email and password.";
+
+        message.className = "error";
+
+        return;
+    }
+
+    try {
+
+        await signInWithEmailAndPassword(
+            auth,
+            username,
+            password
+        );
 
         sessionStorage.setItem(
             "campusSOSAdmin",
             "true"
         );
 
-        window.location.href = "admin.html";
+        window.location.href =
+            "admin.html";
 
-    } else {
+    } catch (error) {
+
+        console.error(
+            "Admin login error:",
+            error
+        );
 
         message.innerText =
-            "Invalid admin username or password.";
+            "Invalid email or password.";
 
         message.className = "error";
     }
