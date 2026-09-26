@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus SOS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <div class="brand">
+        <div class="logo">🚨</div>
+        <h1>Campus SOS</h1>
+        <p>College Emergency Response System</p>
+    </div>
+
+    <div class="login-card">
+
+        <div class="tabs">
+            <button id="studentTab" class="tab active"
+                    onclick="showStudentLogin()">
+                Student Login
+            </button>
+
+            <button id="adminTab" class="tab"
+                    onclick="showAdminLogin()">
+                Admin Login
+            </button>
+        </div>
+
+        <!-- Student Login -->
+
+        <div id="studentLogin">
+
+            <h2>Student Login</h2>
+
+            <label>Student Name</label>
+            <input type="text"
+                   id="studentName"
+                   placeholder="Enter your name">
+
+            <label>Roll Number</label>
+            <input type="text"
+                   id="rollNumber"
+                   placeholder="Enter roll number">
+
+            <button class="primary-btn"
+                    onclick="studentLogin()">
+                Login as Student
+            </button>
+
+        </div>
+
+
+        <!-- Admin Login -->
+
+        <div id="adminLogin" class="hidden">
+
+            <h2>Admin Login</h2>
+
+            <label>Username</label>
+            <input type="text"
+                   id="adminUsername"
+                   placeholder="Username">
+
+            <label>Password</label>
+            <input type="password"
+                   id="adminPassword"
+                   placeholder="Password">
+
+            <button class="primary-btn"
+                    onclick="adminLogin()">
+                Login as Admin
+            </button>
+
+            <p class="demo">
+                Demo: admin / admin123
+            </p>
+
+        </div>
+
+        <p id="loginMessage"></p>
+
+    </div>
+
+</div>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html

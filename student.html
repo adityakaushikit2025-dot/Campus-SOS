@@ -1,0 +1,173 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard - Campus SOS</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div>
+        🚨 <strong>Campus SOS</strong>
+    </div>
+
+    <button class="logout-btn" onclick="logout()">
+        Logout
+    </button>
+
+</header>
+
+
+<main class="dashboard">
+
+    <div class="welcome-card">
+
+        <h1>
+            Welcome, <span id="studentWelcome">Student</span>
+        </h1>
+
+        <p>
+            If you are facing an emergency, use the SOS button below.
+        </p>
+
+    </div>
+
+
+    <section class="sos-section">
+
+        <div class="sos-card">
+
+            <div class="sos-icon">
+                🚨
+            </div>
+
+            <h2>Emergency SOS</h2>
+
+            <p>
+                Press the button only during an emergency.
+            </p>
+
+            <button class="sos-button"
+                    onclick="startSOS()">
+                SOS
+            </button>
+
+            <div id="countdown"
+                 class="countdown hidden">
+            </div>
+
+            <button id="cancelSOS"
+                    class="cancel-btn hidden"
+                    onclick="cancelSOS()">
+                Cancel SOS
+            </button>
+
+        </div>
+
+
+        <div class="form-card">
+
+            <h2>Emergency Details</h2>
+
+            <label>Emergency Type</label>
+
+            <select id="emergencyType">
+
+                <option value="">
+                    Select Emergency
+                </option>
+
+                <option value="Medical">
+                    Medical Emergency
+                </option>
+
+                <option value="Accident">
+                    Accident
+                </option>
+
+                <option value="Security">
+                    Security Issue
+                </option>
+
+                <option value="Fire">
+                    Fire
+                </option>
+
+                <option value="Harassment">
+                    Harassment
+                </option>
+
+                <option value="Other">
+                    Other
+                </option>
+
+            </select>
+
+
+            <label>Campus Location</label>
+
+            <select id="location">
+
+                <option value="">
+                    Select Location
+                </option>
+
+                <option>Main Gate</option>
+                <option>CSE Block</option>
+                <option>Library</option>
+                <option>College Canteen</option>
+                <option>Parking Area</option>
+                <option>Hostel</option>
+                <option>Sports Ground</option>
+                <option>Other</option>
+
+            </select>
+            <button type="button" id="getLocationBtn" onclick="getCurrentLocation()">
+                📍 Use My Current Location
+            </button>
+            <p id="locationMessage"></p>
+            
+            <label>Emergency Priority</label>
+            <select id="priority">
+                <option value="">Select Priority</option>
+                <option value="Critical">Critical</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+
+
+            <label>Description</label>
+
+            <textarea id="description"
+                      placeholder="Describe the emergency...">
+            </textarea>
+
+        </div>
+
+    </section>
+
+
+    <section class="history-card">
+
+        <h2>My SOS History</h2>
+
+        <div id="studentHistory">
+            No SOS alerts yet.
+        </div>
+
+    </section>
+
+</main>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>

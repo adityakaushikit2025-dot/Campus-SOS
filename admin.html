@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - Campus SOS</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div>
+        🚨 <strong>Campus SOS Admin</strong>
+    </div>
+
+    <button class="logout-btn"
+            onclick="adminLogout()">
+        Logout
+    </button>
+
+</header>
+
+
+<main class="dashboard">
+
+    <div class="welcome-card">
+
+        <h1>Admin Dashboard</h1>
+
+        <p>
+            Monitor and manage campus emergency alerts.
+        </p>
+
+    </div>
+
+
+    <section class="stats">
+
+        <div class="stat-card">
+            <h3>Total Alerts</h3>
+            <strong id="totalAlerts">0</strong>
+        </div>
+
+        <div class="stat-card">
+            <h3>Pending</h3>
+            <strong id="pendingAlerts">0</strong>
+        </div>
+
+        <div class="stat-card">
+            <h3>Responding</h3>
+            <strong id="respondingAlerts">0</strong>
+        </div>
+
+        <div class="stat-card">
+            <h3>Resolved</h3>
+            <strong id="resolvedAlerts">0</strong>
+        </div>
+
+    </section>
+    <section class="admin-section">
+
+    <div class="section-header">
+
+        <h2>Emergency Alerts</h2>
+
+        <button class="danger-small"
+                onclick="clearAllAlerts()">
+            Clear Demo Data
+        </button>
+
+    </div>
+
+    <div class="alert-filters">
+
+        <input
+            type="text"
+            id="searchAlerts"
+            placeholder="Search alerts..."
+        >
+
+        <select id="statusFilter">
+            <option value="All">All Status</option>
+            <option value="Pending">Pending</option>
+            <option value="Responding">Responding</option>
+            <option value="Resolved">Resolved</option>
+        </select>
+
+    </div>
+
+    <div id="adminAlerts">
+        /div>
+
+</section>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>
